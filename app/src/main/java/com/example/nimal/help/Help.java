@@ -199,13 +199,14 @@ public class Help extends AppCompatActivity {
     }
     public void messaging(View view)
     {
-        /*String[] number1 = phone.split("\n");
-        Intent smsIntent = new Intent(android.content.Intent.ACTION_VIEW);
-        smsIntent.setType("vnd.android-dir/mms-sms");
-        smsIntent.putExtra("address",number1[4]);
-        smsIntent.putExtra("sms_body","your desired message");
-        startActivity(smsIntent);
-*/
+        String[] number1 = phone.split("\n");
+        String[] number2 = number1[4].split(" : ");
+        Intent intentsms = new Intent( Intent.ACTION_VIEW, Uri.parse( "sms:" + number2[1] ) );
+        intentsms.putExtra( "Emergeny", "Bringing a patient" );
+        startActivity( intentsms );
+
+        //startActivity(new Intent(Intent.ACTION_VIEW, Uri.fromParts("sms", number1[4], "hello")));
+
     }
 
 
