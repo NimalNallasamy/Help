@@ -1,6 +1,7 @@
 package com.example.nimal.help;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -137,5 +138,11 @@ public class Edit_Hosp extends AppCompatActivity {
     public void refresh(View view)
     {
         tv.setText(str);
+    }
+
+    public void onBackPressed()
+    {
+        Intent i = new Intent(this,Login1.class);
+        startActivity(i);
     }
 }

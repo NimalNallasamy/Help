@@ -82,4 +82,9 @@ public class AddUser extends AppCompatActivity implements View.OnClickListener {
                     });
         }
     }
+    public void onBackPressed()
+    {
+        Intent i = new Intent(this,Login1.class);
+        startActivity(i);
+    }
 }

@@ -1,6 +1,7 @@
 package com.example.nimal.help;
 
 import android.*;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -46,5 +47,10 @@ public class Location extends AppCompatActivity {
         {
             gps.showSettingsAlert();
         }
+    }
+    public void onBackPressed()
+    {
+        Intent i = new Intent(this,Login1.class);
+        startActivity(i);
     }
 }
