@@ -1,6 +1,7 @@
 package com.example.nimal.help;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -113,5 +114,10 @@ public class Add_Hosp extends AppCompatActivity implements View.OnClickListener 
             Toast.makeText(this, "Data Saved !!", Toast.LENGTH_SHORT).show();
 
         }
+    }
+    public void onBackPressed()
+    {
+        Intent i = new Intent(Add_Hosp.this,Login1.class);
+        startActivity(i);
     }
 }

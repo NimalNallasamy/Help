@@ -31,7 +31,7 @@ public class Help extends AppCompatActivity {
     ProgressDialog progressDialog;
     TextView show;
     static StringBuffer sb,sb1;
-    static String str,srt,phone;
+    static String str,srt,phone,ar;
     static int count,fun,nuf;
     static double dist=1000000000,rand;
     static double hi[] = new double[2] ;
@@ -139,11 +139,12 @@ public class Help extends AppCompatActivity {
                 double r1 = lol(ss1[1]);
                 double r2 = lol(ss1[2]);
                 rand =  Math.hypot(Math.abs(r1-latitude),Math.abs(r2-longitude));
-                if(rand < dist && (lol(ss1[5]))>4)
+                if((rand < dist && (lol(ss1[5]))>4))
                 {
                     dist = rand;
                     hi[0] = dist;
                     fun = i;
+                    ar = ss[1];
                     //show.setText(ss[i]);
                 }
                 else if(rand < dist && (lol(ss1[5]))<4)
@@ -151,8 +152,17 @@ public class Help extends AppCompatActivity {
                     dist = rand;
                     hi[1] = dist;
                     nuf = i;
+                    ar = ss[1];
                     //show.setText(ss[i]);
                 }
+                else if(!ss[i].contains(ar))
+                {
+                    dist = rand;
+                    hi[0] = dist;
+                    hi[1] = dist;
+                    fun = i;
+                }
+
             }
             else
             {

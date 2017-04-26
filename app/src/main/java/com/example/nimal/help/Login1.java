@@ -43,6 +43,7 @@ public class Login1 extends AppCompatActivity {
         TextView txt = (TextView) findViewById(R.id.TextView1);
         txt.setText("Welcome "+sharedPreferences.getString("Email",null).toString()+" !!!");
 
+        /*
         GridView gridView = (GridView) findViewById(R.id.GridView2);
         gridView.setAdapter(new Login1.ImageAdapter(this));
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -123,6 +124,6 @@ public class Login1 extends AppCompatActivity {
                 R.drawable.images7,
                 R.drawable.images9,
                 R.drawable.images8
-        };
+        };*/
     }
 }
