@@ -1,8 +1,10 @@
 package com.example.nimal.help;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
@@ -25,6 +27,9 @@ public class Login1 extends AppCompatActivity {
 
     SharedPreferences sharedPreferences;
 
+    TextView contact,add,remove,view,update,location;
+    ImageView contact1,add1,remove1,view1,update1,location1;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,6 +48,23 @@ public class Login1 extends AppCompatActivity {
         TextView txt = (TextView) findViewById(R.id.TextView1);
         txt.setText("Welcome "+sharedPreferences.getString("Email",null).toString()+" !!!");
 
+
+
+        contact = (TextView)findViewById(R.id.textView);
+        add = (TextView)findViewById(R.id.textView1);
+        remove = (TextView)findViewById(R.id.textView2);
+        view = (TextView)findViewById(R.id.textView3);
+        update = (TextView)findViewById(R.id.textView4);
+        location = (TextView)findViewById(R.id.textView5);
+
+        contact1 = (ImageView)findViewById(R.id.imageView);
+        add1 = (ImageView)findViewById(R.id.imageView2);
+        remove1 = (ImageView)findViewById(R.id.imageView3);
+        view1 = (ImageView)findViewById(R.id.imageView4);
+        update1 = (ImageView)findViewById(R.id.imageView5);
+        location1 = (ImageView)findViewById(R.id.imageView6);
+
+        /*
         GridView gridView = (GridView) findViewById(R.id.GridView2);
         gridView.setAdapter(new Login1.ImageAdapter(this));
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -123,6 +145,98 @@ public class Login1 extends AppCompatActivity {
                 R.drawable.images7,
                 R.drawable.images9,
                 R.drawable.images8
-        };
+        };*/
+    }
+/*
+    @Override
+    public void onClick(View v) {
+
+        if (v == contact||v == contact1)
+        {
+            Intent j = new Intent(Login1.this, AddUser.class);
+            startActivity(j);
+        }
+        else if(v == add || v== add1)
+        {
+            Intent j = new Intent(Login1.this, Add_Hosp.class);
+            startActivity(j);
+        }
+        else if(v == remove || v== remove1)
+        {
+            Intent j = new Intent(Login1.this, Remove_Hosp.class);
+            startActivity(j);
+        }
+        else if(v == view || v== view1)
+        {
+            Intent j = new Intent(Login1.this, View_Hosp.class);
+            startActivity(j);
+        }
+        else if(v == update || v== update)
+        {
+            Intent j = new Intent(Login1.this, Edit_Hosp.class);
+            startActivity(j);
+        }
+        else if(v == location || v== location1)
+        {
+            Intent j = new Intent(Login1.this, Location.class);
+            startActivity(j);
+        }
+        else
+        {
+            Toast.makeText(this, "Please click either on the image or button", Toast.LENGTH_SHORT).show();
+        }
+
+    }
+    */
+
+    public void addc(View view)
+    {
+        Intent j = new Intent(Login1.this, AddUser.class);
+        startActivity(j);
+    }
+    public void addh(View view)
+    {
+        Intent j = new Intent(Login1.this, Add_Hosp.class);
+        startActivity(j);
+    }
+    public void removeh(View view)
+    {
+        Intent j = new Intent(Login1.this, Remove_Hosp.class);
+        startActivity(j);
+    }
+    public void viewh(View view)
+    {
+        Intent j = new Intent(Login1.this, View_Hosp.class);
+        startActivity(j);
+    }
+    public void edith(View view)
+    {
+        Intent j = new Intent(Login1.this, Edit_Hosp.class);
+        startActivity(j);
+    }
+    public void locationh(View view)
+    {
+        Intent j = new Intent(Login1.this, Location.class);
+        startActivity(j);
+    }
+    public void signout(View view)
+    {
+        AlertDialog.Builder ab = new AlertDialog.Builder(this);
+        ab.setMessage("Willing to log out?");
+        ab.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                firebaseAuth.signOut();
+                Intent i = new Intent(Login1.this,MainActivity.class);
+                startActivity(i);
+            }
+        });
+        ab.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                //do nothing
+            }
+        });
+        ab.show();
     }
 }

@@ -4,7 +4,9 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.media.Rating;
 import android.net.Uri;
+import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -31,7 +33,7 @@ public class Help extends AppCompatActivity {
     ProgressDialog progressDialog;
     TextView show;
     static StringBuffer sb,sb1;
-    static String str,srt,phone;
+    static String str,srt,phone,ar;
     static int count,fun,nuf;
     static double dist=1000000000,rand;
     static double hi[] = new double[2] ;
@@ -39,6 +41,10 @@ public class Help extends AppCompatActivity {
 
 
     DatabaseReference databaseReference;
+
+    Snackbar s;
+
+    CoordinatorLayout coordinatorLayout1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +55,7 @@ public class Help extends AppCompatActivity {
 
         area = (EditText)findViewById(R.id.Area);
         show = (TextView)findViewById(R.id.ShowSugg);
+        coordinatorLayout1 = (CoordinatorLayout)findViewById(R.id.coordinatorLayout);
         sb = new StringBuffer();
         sb1 = new StringBuffer();
 
@@ -89,7 +96,16 @@ public class Help extends AppCompatActivity {
 
             latitude =  gps.getLatitude();
             longitude = gps.getLongitude();
-            Toast.makeText(this, latitude+" , "+longitude, Toast.LENGTH_SHORT).show();
+             s = Snackbar.make(coordinatorLayout1,"Latitude : "+latitude+"\nLongitude : "+longitude,Snackbar.LENGTH_LONG)
+                    .setAction("HIDE", new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    s.dismiss();
+                }
+            });
+            //Toast.makeText(this, latitude+" , "+longitude, Toast.LENGTH_SHORT).show();
+            s.show();
+
         }
         else
         {
@@ -139,11 +155,12 @@ public class Help extends AppCompatActivity {
                 double r1 = lol(ss1[1]);
                 double r2 = lol(ss1[2]);
                 rand =  Math.hypot(Math.abs(r1-latitude),Math.abs(r2-longitude));
-                if(rand < dist && (lol(ss1[5]))>4)
+                if((rand < dist && (lol(ss1[5]))>4))
                 {
                     dist = rand;
                     hi[0] = dist;
                     fun = i;
+                    ar = ss[1];
                     //show.setText(ss[i]);
                 }
                 else if(rand < dist && (lol(ss1[5]))<4)
@@ -151,8 +168,17 @@ public class Help extends AppCompatActivity {
                     dist = rand;
                     hi[1] = dist;
                     nuf = i;
+                    ar = ss[1];
                     //show.setText(ss[i]);
                 }
+                else if(!ss[i].contains(ar))
+                {
+                    dist = rand;
+                    hi[0] = dist;
+                    hi[1] = dist;
+                    fun = i;
+                }
+
             }
             else
             {
