@@ -44,6 +44,7 @@
 
     </LinearLayout>
 
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -51,8 +52,10 @@
         <ScrollView
             android:id="@+id/scrollView2"
             android:layout_width="300dp"
-            android:layout_height="350dp"
+            android:layout_height="325dp"
+            android:layout_above="@+id/floatingActionButton"
             android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
             android:layout_toStartOf="@+id/floatingActionButton">
 
             <TextView
@@ -69,8 +72,8 @@
             android:id="@+id/floatingActionButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
             android:layout_alignParentEnd="true"
-            android:layout_below="@+id/scrollView2"
             android:layout_gravity="end"
             android:clickable="true"
             android:onClick="newing"
@@ -84,9 +87,9 @@
             android:layout_alignParentEnd="true"
             android:layout_marginBottom="15dp"
             android:clickable="true"
-            app:fabSize="mini"
             android:onClick="call"
             android:visibility="invisible"
+            app:fabSize="mini"
             app:srcCompat="@android:drawable/stat_sys_phone_call_forward" />
 
         <android.support.design.widget.FloatingActionButton
@@ -96,13 +99,25 @@
             android:layout_above="@+id/floatingActionButton2"
             android:layout_alignStart="@+id/floatingActionButton2"
             android:layout_marginBottom="12dp"
-            android:onClick="messaging"
             android:clickable="true"
-            app:fabSize="mini"
+            android:onClick="messaging"
             android:visibility="invisible"
+            app:fabSize="mini"
             app:srcCompat="@android:drawable/stat_notify_chat" />
 
+        <android.support.design.widget.CoordinatorLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            android:id="@+id/coordinatorLayout"
+            android:layout_toStartOf="@+id/floatingActionButton"
+            android:layout_alignParentTop="true">
+
+        </android.support.design.widget.CoordinatorLayout>
+
     </RelativeLayout>
+
+
 
 
 </LinearLayout>

@@ -4,7 +4,9 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.media.Rating;
 import android.net.Uri;
+import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -40,6 +42,10 @@ public class Help extends AppCompatActivity {
 
     DatabaseReference databaseReference;
 
+    Snackbar s;
+
+    CoordinatorLayout coordinatorLayout1;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,6 +55,7 @@ public class Help extends AppCompatActivity {
 
         area = (EditText)findViewById(R.id.Area);
         show = (TextView)findViewById(R.id.ShowSugg);
+        coordinatorLayout1 = (CoordinatorLayout)findViewById(R.id.coordinatorLayout);
         sb = new StringBuffer();
         sb1 = new StringBuffer();
 
@@ -89,7 +96,16 @@ public class Help extends AppCompatActivity {
 
             latitude =  gps.getLatitude();
             longitude = gps.getLongitude();
-            Toast.makeText(this, latitude+" , "+longitude, Toast.LENGTH_SHORT).show();
+             s = Snackbar.make(coordinatorLayout1,"Latitude : "+latitude+"\nLongitude : "+longitude,Snackbar.LENGTH_LONG)
+                    .setAction("HIDE", new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    s.dismiss();
+                }
+            });
+            //Toast.makeText(this, latitude+" , "+longitude, Toast.LENGTH_SHORT).show();
+            s.show();
+
         }
         else
         {

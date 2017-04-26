@@ -9,41 +9,51 @@
     tools:context="com.example.nimal.help.Login1">
 
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="25dp"
-        android:textSize="20dp"
         android:id="@+id/TextView1"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
         android:gravity="right"
-        android:textStyle="bold"/>
+        android:textSize="20dp"
+        android:textStyle="bold" />
 
 
     <ImageView
         android:layout_width="50dp"
         android:layout_height="30dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="29dp"
         android:src="@drawable/images4"
         android:layout_marginLeft="70dp"
-        android:id="@+id/imageView" />
+        android:id="@+id/imageView"
+        android:clickable="true"
+        android:onClick="edith"
+        android:layout_marginStart="66dp"
+        android:layout_below="@+id/TextView1"
+        android:layout_alignParentStart="true" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="25dp"
         android:text="Add User"
+        android:onClick="addc"
         android:textSize="25dp"
         android:textStyle="bold"
-        android:layout_marginTop="3dp"
-        android:layout_alignTop="@+id/imageView"
-        android:layout_toEndOf="@+id/imageView" />
+        android:clickable="true"
+        android:layout_alignParentEnd="true"
+        android:layout_toEndOf="@+id/imageView"
+        android:layout_alignBottom="@+id/imageView"
+        android:layout_alignTop="@+id/imageView" />
 
     <ImageView
         android:layout_width="50dp"
         android:layout_height="40dp"
         android:layout_marginLeft="55dp"
-        android:src="@drawable/images5"
+        android:src="@drawable/images7"
         android:id="@+id/imageView2"
-        android:layout_alignTop="@+id/textView1"
-        android:layout_toStartOf="@+id/textView1" />
+        android:onClick="viewh"
+        android:clickable="true"
+        android:layout_alignBottom="@+id/textView3"
+        android:layout_toStartOf="@+id/textView3" />
 
     <TextView
         android:id="@+id/textView1"
@@ -51,37 +61,47 @@
         android:layout_height="wrap_content"
         android:textSize="25dp"
         android:text="Add Hospital"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="45dp"
         android:textStyle="bold"
-        android:layout_alignTop="@+id/imageView"
+        android:onClick="addh"
+        android:clickable="true"
+        android:layout_below="@+id/textView"
+        android:layout_alignParentEnd="true"
         android:layout_toEndOf="@+id/imageView" />
 
     <ImageView
         android:layout_width="50dp"
         android:layout_height="40dp"
         android:layout_marginLeft="40dp"
-        android:src="@drawable/image6"
+        android:src="@drawable/images5"
         android:id="@+id/imageView5"
-        android:layout_alignTop="@+id/textView2"
-        android:layout_toStartOf="@+id/textView2" />
+        android:clickable="true"
+        android:onClick="addh"
+        android:layout_above="@+id/textView2"
+        android:layout_toStartOf="@+id/textView1" />
     <TextView
         android:id="@+id/textView2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="25dp"
+        android:onClick="removeh"
         android:text="Remove Hospital"
-        android:layout_marginTop="110dp"
+        android:layout_marginTop="35dp"
         android:textStyle="bold"
-        android:layout_alignTop="@+id/imageView"
-        android:layout_toEndOf="@+id/imageView" />
+        android:clickable="true"
+        android:layout_below="@+id/textView1"
+        android:layout_alignParentEnd="true"
+        android:layout_toEndOf="@+id/imageView2" />
 
     <ImageView
         android:layout_width="50dp"
         android:layout_height="40dp"
-        android:src="@drawable/images7"
+        android:src="@drawable/image6"
         android:id="@+id/imageView4"
-        android:layout_alignTop="@+id/textView3"
-        android:layout_alignStart="@+id/imageView2" />
+        android:clickable="true"
+        android:onClick="removeh"
+        android:layout_alignBottom="@+id/textView2"
+        android:layout_toStartOf="@+id/textView2" />
 
     <TextView
         android:id="@+id/textView3"
@@ -89,18 +109,24 @@
         android:layout_height="wrap_content"
         android:textSize="25dp"
         android:text="View Hospital"
-        android:layout_marginTop="158dp"
+        android:layout_marginTop="32dp"
         android:textStyle="bold"
-        android:layout_alignTop="@+id/imageView"
-        android:layout_toEndOf="@+id/imageView" />
+        android:onClick="viewh"
+        android:clickable="true"
+        android:layout_below="@+id/textView2"
+        android:layout_alignParentEnd="true"
+        android:layout_toEndOf="@+id/imageView5" />
 
     <ImageView
         android:layout_width="50dp"
         android:layout_height="40dp"
         android:src="@drawable/images9"
         android:id="@+id/imageView3"
-        android:layout_alignTop="@+id/textView4"
-        android:layout_alignStart="@+id/imageView6" />
+        android:clickable="true"
+        android:onClick="edith"
+        android:layout_below="@+id/imageView2"
+        android:layout_alignStart="@+id/imageView2"
+        android:layout_marginTop="28dp" />
 
     <TextView
         android:id="@+id/textView4"
@@ -108,31 +134,47 @@
         android:layout_height="wrap_content"
         android:textSize="25dp"
         android:text="Update Hospital"
-        android:layout_marginTop="205dp"
+        android:clickable="true"
         android:textStyle="bold"
-        android:layout_alignTop="@+id/imageView"
-        android:layout_toEndOf="@+id/imageView" />
+        android:onClick="edith"
+        android:layout_alignBottom="@+id/imageView3"
+        android:layout_alignParentEnd="true"
+        android:layout_toEndOf="@+id/imageView3" />
 
     <ImageView
         android:layout_width="50dp"
         android:layout_height="40dp"
         android:src="@drawable/images8"
         android:id="@+id/imageView6"
-        android:layout_alignTop="@+id/textView5"
-        android:layout_alignStart="@+id/imageView2" />
+        android:clickable="true"
+        android:onClick="locationh"
+        android:layout_alignBottom="@+id/textView5"
+        android:layout_toStartOf="@+id/textView5" />
     <TextView
         android:id="@+id/textView5"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="25dp"
-        android:layout_marginTop="250dp"
         android:text="Location"
+        android:clickable="true"
+        android:onClick="locationh"
         android:textStyle="bold"
-        android:layout_alignTop="@+id/imageView"
-        android:layout_toEndOf="@+id/imageView" />
+        android:layout_below="@+id/textView4"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="34dp"
+        android:layout_toEndOf="@+id/imageView3" />
 
-
-
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="150dp"
+        android:layout_height="30dp"
+        android:text="Sign Out"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:clickable="true"
+        android:onClick="signout"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true" />
 
 
 </RelativeLayout>
