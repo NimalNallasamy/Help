@@ -102,6 +102,7 @@
             android:clickable="true"
             android:onClick="messaging"
             android:visibility="invisible"
+            android:stateListAnimator=""
             app:fabSize="mini"
             app:srcCompat="@android:drawable/stat_notify_chat" />
 
