@@ -24,13 +24,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Enter Latitude"
-        android:inputType="numberDecimal"
         android:id="@+id/latitude" />
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="numberDecimal"
         android:hint="Enter Longitude"
         android:id="@+id/longitude" />
 
@@ -53,7 +51,7 @@
         android:id="@+id/Rating"
         android:inputType="numberDecimal"
         android:hint="Enter the rating out of 5"
-        android:maxLength="3"/>
+        android:maxLength="4"/>
 
     <Button
         android:layout_width="match_parent"

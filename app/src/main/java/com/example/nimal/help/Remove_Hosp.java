@@ -100,17 +100,19 @@ public class Remove_Hosp extends AppCompatActivity {
 
     public void read(View view)
     {
+        sb = new StringBuffer();
         for (int i = 0; i <= count; i++) {
-            sb = new StringBuffer();
+
             databaseReference.child("Hospital").child(String.valueOf(i)).addValueEventListener(new ValueEventListener() {
                 @Override
                 public void onDataChange(DataSnapshot dataSnapshot) {
 
                     for (DataSnapshot data : dataSnapshot.getChildren()) {
                         sb.append(data.getKey() + " : " + data.getValue().toString() + "\n");
+                        str = sb.toString();
                     }
                     sb.append("\n");
-                    Toast.makeText(Remove_Hosp.this, sb, Toast.LENGTH_SHORT).show();
+                   // Toast.makeText(Remove_Hosp.this, sb, Toast.LENGTH_SHORT).show();
                     //view1.setText(sb.toString());
                     str = sb.toString();
                 }
@@ -120,6 +122,7 @@ public class Remove_Hosp extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "Server is Busy..", Toast.LENGTH_SHORT).show();
                 }
             });
+           // Toast.makeText(this, sb, Toast.LENGTH_SHORT).show();
         }
 
 

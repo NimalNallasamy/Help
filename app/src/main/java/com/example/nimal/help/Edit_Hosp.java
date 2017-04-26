@@ -107,9 +107,10 @@ public class Edit_Hosp extends AppCompatActivity {
 
     public void read(View view)
     {
+        sb = new StringBuffer();
         for (int i = 0; i <= count; i++) {
 
-            sb = new StringBuffer();
+
             databaseReference.child("Hospital").child(String.valueOf(i)).addValueEventListener(new ValueEventListener() {
                 @Override
                 public void onDataChange(DataSnapshot dataSnapshot) {
