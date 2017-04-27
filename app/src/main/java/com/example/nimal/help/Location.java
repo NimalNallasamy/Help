@@ -1,7 +1,9 @@
 package com.example.nimal.help;
 
 import android.*;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -17,13 +19,18 @@ public class Location extends AppCompatActivity {
     GPSTracker gps;
     TextView txt;
     EditText edt;
+    SharedPreferences sharedPreferences;
     StringBuffer str;
-
+    public static String u;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_location);
+
+        sharedPreferences = getSharedPreferences("FromUser", Context.MODE_PRIVATE);
+        u = sharedPreferences.getString("User",null).toString();
+
     }
 
     public void show_location(View view)
@@ -50,7 +57,15 @@ public class Location extends AppCompatActivity {
     }
     public void onBackPressed()
     {
-        Intent i = new Intent(this,Login1.class);
-        startActivity(i);
+        if(u.contentEquals("user")) {
+            u = "hi";
+            Intent i = new Intent(this, User1.class);
+            startActivity(i);
+        }
+        else{
+            Intent i = new Intent(this, Login1.class);
+            startActivity(i);
+        }
+
     }
 }

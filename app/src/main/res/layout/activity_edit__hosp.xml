@@ -1,58 +1,97 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:orientation="vertical"
     android:layout_height="match_parent"
-    android:background="#d3d3d3"
+    android:background="@drawable/texture11"
     tools:context="com.example.nimal.help.Edit_Hosp">
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="225dp">
+        android:layout_height="225dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/scrollView4"
+        android:layout_above="@+id/Parent">
+
         <TextView
+            android:id="@+id/ShowDetails1"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/ShowDetails1"
-            android:layout_gravity="center"
-            android:hint="Database Values"
-            android:gravity="center"/>
+            android:textStyle="italic"
+            android:textColorHint="#FFFFFF"
+            android:textColor="#FFFFFF"
+            android:gravity="center"
+            android:hint="First click on Read Data button
+and then Refresh to view the data" />
     </ScrollView>
+
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Enter the parent of the key"
         android:inputType="number"
-        android:id="@+id/Parent"/>
+        android:layout_marginLeft="0dp"
+        android:gravity="center"
+        android:id="@+id/Parent"
+        android:textColorHint="#00FF00"
+        android:layout_above="@+id/Key"
+        android:layout_alignParentStart="true" />
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="0dp"
+        android:gravity="center"
         android:hint="Enter the key to be deleted"
-        android:id="@+id/Key"/>
+        android:textColorHint="#00FF00"
+        android:id="@+id/Key"
+        android:layout_above="@+id/Value"
+        android:layout_alignParentStart="true" />
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textColorHint="#00FF00"
+        android:layout_marginLeft="0dp"
         android:id="@+id/Value"
-        android:hint="Enter the new value"/>
+        android:hint="Enter the new value"
+        android:layout_above="@+id/button12"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="11dp" />
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:onClick="update"
-        android:text="Update"/>
+        android:text="Update"
+        android:background="#9ACD32"
+        android:id="@+id/button13"
+        android:layout_marginBottom="25dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:onClick="read"
-        android:text="Read Data"/>
+        android:text="Read Data"
+        android:background="#9ACD32"
+        android:id="@+id/button12"
+        android:layout_above="@+id/button13"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="27dp" />
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:onClick="refresh"
-        android:text="Refresh"/>
-
-</LinearLayout>
+        android:background="#9ACD32"
+        android:text="Refresh"
+        android:id="@+id/button11"
+        android:layout_above="@+id/button13"
+        android:layout_toStartOf="@+id/button13"
+        android:layout_marginEnd="28dp" />
+</RelativeLayout>

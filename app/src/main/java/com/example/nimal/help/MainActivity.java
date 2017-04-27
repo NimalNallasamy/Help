@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
 
     private FirebaseAuth firebaseAuth;
     private FirebaseUser firebaseUser;
+    int count = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,12 +31,18 @@ public class MainActivity extends AppCompatActivity {
         firebaseAuth = FirebaseAuth.getInstance();
 
         if (firebaseAuth.getCurrentUser() == null) {
-            Toast.makeText(this, "No User has loged in !!", Toast.LENGTH_SHORT).show();
+            //Toast.makeText(this, "No User has loged in !!", Toast.LENGTH_SHORT).show();
+            count = 1;
+        }
+        else
+        {
+            //Toast.makeText(this, firebaseAuth.getCurrentUser().toString(), Toast.LENGTH_SHORT).show();
+            count = 0;
         }
 
         firebaseUser = firebaseAuth.getCurrentUser();
 
-        GridView gridView = (GridView) findViewById(R.id.GridView1);
+        /*GridView gridView = (GridView) findViewById(R.id.GridView1);
         gridView.setAdapter(new MainActivity.ImageAdapter(this));
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -95,7 +102,25 @@ public class MainActivity extends AppCompatActivity {
         private Integer[] mThumbsIda = {
                 R.drawable.images3,
                 R.drawable.images2
-        };
+        };*/
 
+    }
+
+    public void justing(View view)
+    {
+        Intent j = new Intent(MainActivity.this, User1.class);
+        startActivity(j);
+    }
+    public void loladmin(View view)
+    {
+        if(count == 1) {
+            Intent j = new Intent(MainActivity.this, Admin_login.class);
+            startActivity(j);
+        }
+        else if(count == 0)
+        {
+            Intent j = new Intent(MainActivity.this, Login1.class);
+            startActivity(j);
+        }
     }
 }

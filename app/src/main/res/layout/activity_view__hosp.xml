@@ -1,43 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#d3d3d3"
+    android:background="@drawable/texture4"
     tools:context="com.example.nimal.help.View_Hosp">
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="Retrieve Data"
-        android:onClick="readDatabase"/>
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="Display Value"
-        android:onClick="setting"/>
-
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
-        <TextView
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Retrieve Data"
+            android:onClick="readDatabase"
+            android:id="@+id/button3"
+            android:background="#000000"
+            android:textColor="#dcdcdc"
+            android:layout_alignBaseline="@+id/button4"
+            android:layout_alignBottom="@+id/button4"
+            android:layout_toStartOf="@+id/button4"
+            android:layout_marginEnd="56dp" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Display Value"
+            android:onClick="setting"
+            android:id="@+id/button4"
+            android:background="#000000"
+            android:textColor="#dcdcdc"
+            android:layout_marginEnd="56dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginBottom="34dp" />
+
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/View1"
-            android:hint="Database Values"
-            android:gravity="center"/>
+            android:layout_height="382dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true">
 
-    </LinearLayout>
-    </ScrollView>
 
-</LinearLayout>
+            <TextView
+                android:id="@+id/View1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_above="@+id/button3"
+                android:layout_alignParentStart="true"
+                android:layout_marginBottom="136dp"
+                android:gravity="center"
+                android:hint="First click on Retreive Data and
+   then Display Value to display the values"
+                android:textColor="#000000"
+                android:textColorHint="#000000"
+                android:textSize="15dp"
+                android:textStyle="bold" />
+
+
+        </ScrollView>
+
+    </RelativeLayout>
+
+</RelativeLayout>

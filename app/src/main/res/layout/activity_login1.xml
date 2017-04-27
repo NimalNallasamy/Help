@@ -5,14 +5,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
+    android:background="@drawable/texture8"
     tools:context="com.example.nimal.help.Login1">
 
     <TextView
         android:id="@+id/TextView1"
         android:layout_width="match_parent"
         android:layout_height="30dp"
-        android:gravity="right"
+        android:gravity="fill_vertical"
         android:textSize="20dp"
         android:textStyle="bold" />
 

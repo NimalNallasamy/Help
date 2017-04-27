@@ -1,58 +1,125 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background=""
+    android:background="@drawable/texture1"
     tools:context="com.example.nimal.help.Add_Hosp">
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Enter Hospital Name"
-        android:layout_marginLeft="10dp"
+        android:layout_marginLeft="60dp"
         android:layout_marginRight="10dp"
+        android:layout_marginTop="20dp"
+        android:textColorHint="#ffff00"
+        android:textStyle="bold"
         android:gravity="center"
         android:id="@+id/hname" />
 
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="52dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="18dp"
+        android:src="@drawable/hosp" />
+
+
+    <ImageView
+        android:id="@+id/imageView8"
+        android:layout_width="52dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="60dp"
+        android:src="@drawable/city" />
+    <ImageView
+        android:id="@+id/imageView9"
+        android:layout_width="52dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="104dp"
+        android:src="@drawable/ll" />
+    <ImageView
+        android:id="@+id/imageView10"
+        android:layout_width="52dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="148dp"
+        android:src="@drawable/ll" />
+
+    <ImageView
+        android:id="@+id/imageView11"
+        android:layout_width="50dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="191dp"
+        android:src="@drawable/speciality" />
+
+    <ImageView
+        android:id="@+id/imageView12"
+        android:layout_width="50dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="233dp"
+        android:src="@drawable/contact" />
+
+    <ImageView
+        android:id="@+id/imageView13"
+        android:layout_width="52dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="277dp"
+        android:src="@drawable/rating" />
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Enter City"
         android:gravity="center"
-        android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
-        android:id="@+id/hcity" />
+        android:id="@+id/hcity"
+        android:textColorHint="#ffff00"
+        android:layout_marginTop="2dp"
+        android:textStyle="bold"
+        android:layout_below="@+id/hname"
+        android:layout_alignStart="@+id/hname" />
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Enter Latitude"
         android:gravity="center"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:id="@+id/latitude" />
+        android:textColorHint="#ffff00"
+        android:textStyle="bold"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginRight="0dp"
+        android:id="@+id/latitude"
+        android:layout_below="@+id/imageView8"
+        android:layout_alignEnd="@+id/hcity" />
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Enter Longitude"
-        android:layout_marginLeft="10dp"
+        android:layout_marginLeft="60dp"
         android:gravity="center"
-        android:layout_marginRight="10dp"
-        android:id="@+id/longitude" />
+        android:layout_marginRight="0dp"
+        android:id="@+id/longitude"
+        android:layout_marginTop="152dp"
+        android:textColorHint="#ffff00"
+        android:textStyle="bold"
+        />
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Enter Speciality"
-        android:layout_marginLeft="10dp"
+        android:layout_marginLeft="60dp"
         android:gravity="center"
         android:layout_marginRight="10dp"
-        android:id="@+id/speciality" />
+        android:textColorHint="#ffff00"
+        android:textStyle="bold"
+        android:id="@+id/speciality"
+        android:layout_marginTop="194dp"
+        />
 
     <EditText
         android:id="@+id/phno"
@@ -60,28 +127,40 @@
         android:layout_height="wrap_content"
         android:inputType="number"
         android:gravity="center"
-        android:layout_marginLeft="10dp"
+        android:textColorHint="#ffff00"
+        android:textStyle="bold"
+        android:layout_marginLeft="60dp"
         android:layout_marginRight="10dp"
-        android:hint="Enter Contact No." />
+        android:hint="Enter Contact No."
+        android:layout_marginTop="238dp"
+        />
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/Rating"
-        android:layout_marginLeft="10dp"
+        android:layout_marginLeft="0dp"
         android:gravity="center"
+        android:textColorHint="#ffff00"
+        android:textStyle="bold"
         android:layout_marginRight="10dp"
         android:inputType="numberDecimal"
         android:hint="Enter the rating out of 5"
-        android:maxLength="4"/>
+        android:maxLength="4"
+        android:layout_below="@+id/phno"
+        android:layout_alignStart="@+id/phno" />
 
     <Button
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Add"
-        android:layout_marginTop="10dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
-        android:id="@+id/add" />
+        android:id="@+id/add"
+        android:background="#9ACD32"
+        android:textStyle="bold"
+        android:layout_below="@+id/Rating"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="52dp" />
 
-</LinearLayout>
+</RelativeLayout>

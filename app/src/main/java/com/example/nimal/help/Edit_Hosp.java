@@ -120,7 +120,7 @@ public class Edit_Hosp extends AppCompatActivity {
                         sb.append(data.getKey() + " : " + data.getValue().toString() + "\n");
                     }
                     sb.append("\n");
-                    Toast.makeText(Edit_Hosp.this, sb, Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(Edit_Hosp.this, sb, Toast.LENGTH_SHORT).show();
                     //view1.setText(sb.toString());
                     str = sb.toString();
                 }

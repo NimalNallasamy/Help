@@ -8,6 +8,8 @@ import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -67,6 +69,9 @@ public class Admin_login extends AppCompatActivity {
                         else
                         {
                             progressDialog.dismiss();
+                            Animation shake = AnimationUtils.loadAnimation(Admin_login.this, R.anim.shake);
+                            ed1.startAnimation(shake);
+                            ed2.startAnimation(shake);
                             Toast.makeText(Admin_login.this, "Credentials wrong", Toast.LENGTH_SHORT).show();
                         }
                     }

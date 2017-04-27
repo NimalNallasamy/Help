@@ -2,6 +2,7 @@ package com.example.nimal.help;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
@@ -14,12 +15,22 @@ import android.widget.ImageView;
 
 public class User1 extends AppCompatActivity {
 
+    SharedPreferences sharedpreferences;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user1);
 
-        GridView gridView = (GridView) findViewById(R.id.GridView2);
+
+        sharedpreferences = getSharedPreferences("FromUser", Context.MODE_PRIVATE);
+
+        SharedPreferences.Editor editor = sharedpreferences.edit();
+
+        editor.putString("User","user");
+        editor.commit();
+
+        /*GridView gridView = (GridView) findViewById(R.id.GridView2);
         gridView.setAdapter(new User1.ImageAdapter(this));
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -79,7 +90,25 @@ public class User1 extends AppCompatActivity {
                 R.drawable.image8,
                 R.drawable.images8
         };
+*/
 
+    }
 
+    public void helping(View view)
+    {
+        Intent j = new Intent(User1.this, Help.class);
+        startActivity(j);
+    }
+    public void location(View view)
+    {
+
+        Intent j = new Intent(User1.this, Location.class);
+        startActivity(j);
+    }
+
+    @Override
+    public void onBackPressed() {
+        Intent i = new Intent(this,MainActivity.class);
+        startActivity(i);
     }
 }

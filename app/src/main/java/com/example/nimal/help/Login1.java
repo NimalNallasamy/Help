@@ -239,4 +239,9 @@ public class Login1 extends AppCompatActivity {
         });
         ab.show();
     }
+    public void onBackPressed()
+    {
+        Intent i = new Intent(this,MainActivity.class);
+        startActivity(i);
+    }
 }
