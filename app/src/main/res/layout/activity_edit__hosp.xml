@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    android:background="@drawable/texture11"
+
+    tools:context="com.example.nimal.help.Edit_Hosp">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="225dp"
+        android:layout_above="@+id/Parent"
+        android:layout_alignParentStart="true">
+
+        <TextView
+            android:id="@+id/ShowDetails1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:textStyle="italic"
+            android:textColorHint="#00FF00"
+            android:gravity="center"
+            android:hint="Database Values" />
+    </ScrollView>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter the parent of the key"
+        android:inputType="number"
+        android:layout_marginLeft="0dp"
+        android:gravity="center"
+        android:id="@+id/Parent"
+        android:layout_above="@+id/Key"
+        android:textColorHint="#00FF00"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="13dp" />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="0dp"
+        android:gravity="center"
+        android:hint="Enter the key to be deleted"
+        android:textColorHint="#00FF00"
+        android:id="@+id/Key"
+        android:layout_above="@+id/Value"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="12dp" />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textColorHint="#00FF00"
+        android:layout_marginLeft="0dp"
+        android:id="@+id/Value"
+        android:hint="Enter the new value"
+        android:layout_above="@+id/button13"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="21dp" />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:onClick="update"
+        android:text="Update"
+        android:background="#9ACD32"
+        android:layout_alignBaseline="@+id/button12"
+        android:layout_alignBottom="@+id/button12"
+        android:layout_toStartOf="@+id/button11"
+        android:id="@+id/button13" />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:onClick="read"
+        android:text="Read Data"
+        android:background="#9ACD32"
+        android:layout_above="@+id/button11"
+        android:layout_toEndOf="@+id/button11"
+        android:layout_marginBottom="16dp"
+        android:id="@+id/button12" />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:onClick="refresh"
+        android:background="#9ACD32"
+        android:text="Refresh"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="11dp"
+        android:id="@+id/button11" />
+
+</RelativeLayout>

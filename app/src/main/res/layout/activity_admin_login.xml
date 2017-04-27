@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.nimal.help.Admin_login"
+    android:background="@drawable/texture3">
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Email Id"
+        android:inputType="textEmailAddress"
+        android:layout_marginTop="70dp"
+        android:layout_marginLeft="60dp"
+        android:textStyle="bold"
+        android:textColorHint="#8B4513"
+        android:id="@+id/Email"
+        android:gravity="center"/>
+
+    <EditText
+        android:id="@+id/Password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="60dp"
+        android:gravity="center"
+        android:hint="Password"
+        android:textColorHint="#8B4513"
+        android:textStyle="bold"
+        android:inputType="textPassword"
+        android:layout_marginTop="142dp" />
+
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="58dp"
+        android:src="@drawable/mail"/>
+
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="128dp"
+        android:src="@drawable/password"/>
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:onClick="signup"
+        android:text="Sign Up"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="109dp"
+        android:background="#8B4513"
+        android:textStyle="bold"
+        android:textColor="#F5DEB3"
+        android:layout_below="@+id/Password"
+        android:layout_alignStart="@+id/Password"
+        android:layout_marginStart="77dp" />
+
+</RelativeLayout>
