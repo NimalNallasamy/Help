@@ -106,7 +106,7 @@
         android:layout_marginTop="152dp"
         android:textColorHint="#ffff00"
         android:textStyle="bold"
-         />
+        />
 
     <EditText
         android:layout_width="match_parent"
@@ -119,7 +119,7 @@
         android:textStyle="bold"
         android:id="@+id/speciality"
         android:layout_marginTop="194dp"
-         />
+        />
 
     <EditText
         android:id="@+id/phno"
