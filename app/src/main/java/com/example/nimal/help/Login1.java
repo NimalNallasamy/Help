@@ -54,15 +54,23 @@ public class Login1 extends AppCompatActivity {
         add = (TextView)findViewById(R.id.textView1);
         remove = (TextView)findViewById(R.id.textView2);
         view = (TextView)findViewById(R.id.textView3);
-        update = (TextView)findViewById(R.id.textView4);
+        //update = (TextView)findViewById(R.id.textView4);
         location = (TextView)findViewById(R.id.textView5);
 
         contact1 = (ImageView)findViewById(R.id.imageView);
-        add1 = (ImageView)findViewById(R.id.imageView2);
-        remove1 = (ImageView)findViewById(R.id.imageView3);
-        view1 = (ImageView)findViewById(R.id.imageView4);
-        update1 = (ImageView)findViewById(R.id.imageView5);
+        add1 = (ImageView)findViewById(R.id.imageView5);
+        remove1 = (ImageView)findViewById(R.id.imageView4);
+        view1 = (ImageView)findViewById(R.id.imageView2);
+        //update1 = (ImageView)findViewById(R.id.imageView5);
         location1 = (ImageView)findViewById(R.id.imageView6);
+
+
+        sharedPreferences = getSharedPreferences("FromUser", Context.MODE_PRIVATE);
+
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+
+        editor.putString("User","Login");
+        editor.commit();
 
         /*
         GridView gridView = (GridView) findViewById(R.id.GridView2);
@@ -209,11 +217,12 @@ public class Login1 extends AppCompatActivity {
         Intent j = new Intent(Login1.this, View_Hosp.class);
         startActivity(j);
     }
-    public void edith(View view)
+   /* public void edith(View view)
     {
         Intent j = new Intent(Login1.this, Edit_Hosp.class);
         startActivity(j);
     }
+    */
     public void locationh(View view)
     {
         Intent j = new Intent(Login1.this, Location.class);

@@ -23,7 +23,7 @@
             android:textStyle="italic"
             android:textSize="15dp"
             android:gravity="center"
-            android:hint="First click on Read Data
+            android:hint="First click on Read Data\n
             and the Refresh to display the found data"
             android:layout_alignParentStart="true"
             android:layout_above="@+id/Key" />

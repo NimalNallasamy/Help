@@ -58,11 +58,10 @@ public class Location extends AppCompatActivity {
     public void onBackPressed()
     {
         if(u.contentEquals("user")) {
-            u = "hi";
             Intent i = new Intent(this, User1.class);
             startActivity(i);
         }
-        else{
+        else if(u.contentEquals("Login")){
             Intent i = new Intent(this, Login1.class);
             startActivity(i);
         }

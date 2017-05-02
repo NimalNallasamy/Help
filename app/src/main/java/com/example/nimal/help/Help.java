@@ -34,7 +34,7 @@ public class Help extends AppCompatActivity {
     TextView show;
     static StringBuffer sb,sb1;
     static String str,srt,phone,ar;
-    static int count,fun,nuf;
+    static int count,fun,nuf,fabi = 1;
     static double dist=1000000000,rand;
     static double hi[] = new double[2] ;
     static int round = 0;
@@ -213,8 +213,17 @@ public class Help extends AppCompatActivity {
         FloatingActionButton fab1 = (FloatingActionButton)findViewById(R.id.floatingActionButton2);
         FloatingActionButton fab2 = (FloatingActionButton)findViewById(R.id.floatingActionButton3);
 
-        fab1.setVisibility(view.VISIBLE);
-        fab2.setVisibility(view.VISIBLE);
+        if(fabi == 1) {
+            fab1.setVisibility(view.VISIBLE);
+            fab2.setVisibility(view.VISIBLE);
+            fabi = 0;
+        }
+        else if(fabi == 0)
+        {
+            fab1.setVisibility(view.INVISIBLE);
+            fab2.setVisibility(view.INVISIBLE);
+            fabi = 1;
+        }
     }
     public void call(View view)
     {
